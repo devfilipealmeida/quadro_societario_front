@@ -6,6 +6,7 @@ import { TableComponentComponent } from './components/pages/table-component/tabl
 import { FormEmpresaComponentComponent } from './components/pages/form-empresa-component/form-empresa-component.component';
 import { FormSocioComponentComponent } from './components/pages/form-socio-component/form-socio-component.component';
 import { DetalhesEmpresaComponentComponent } from './components/pages/detalhes-empresa-component/detalhes-empresa-component.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { DetalhesEmpresaComponentComponent } from './components/pages/detalhes-e
     FormSocioComponentComponent,
     DetalhesEmpresaComponentComponent,
     RouterOutlet,
+    MessagesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
