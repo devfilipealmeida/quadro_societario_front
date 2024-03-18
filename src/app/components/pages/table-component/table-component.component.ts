@@ -2,6 +2,8 @@ import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { EmpresaService } from '../../../services/empresa.service';
+
 @Component({
   selector: 'app-table-component',
   standalone: true,
@@ -11,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TableComponentComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private empresaService: EmpresaService) {}
 
   empresas = [
     { responsavel: 'João Cirino', nomeFantasia: 'Tectoy Indústria de Eletrônicos', cnpj: '33942192000104' },
