@@ -8,6 +8,7 @@ export const routes: Routes = [
     { path: '', component: TableComponentComponent },
     { path: 'home', component: TableComponentComponent },
     { path: 'cadastro/empresa', component: FormEmpresaComponentComponent },
+    { path: 'editar/empresa/:id', component: FormEmpresaComponentComponent },
     { path: 'cadastro/socio', component: FormSocioComponentComponent },
     { path: 'editar/socio/:cpf', component: FormSocioComponentComponent },
     { path: 'detalhes/empresa/:id', component: DetalhesEmpresaComponentComponent },

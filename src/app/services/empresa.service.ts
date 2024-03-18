@@ -22,4 +22,12 @@ export class EmpresaService {
   createEmpresa(data: Company): Observable<Company> {
     return this.http.post<Company>(`${this.apiUrl}/corporations`, data);
   }
+
+  getById(id: number): Observable<Company> {
+    return this.http.get<Company>(`${this.apiUrl}/corporations/${id}`);
+  }
+
+  updateEmpresa(data: Company, empresaId: number): Observable<Company> {
+    return this.http.put<Company>(`${this.apiUrl}/corporations/${empresaId}`, data);
+  }
 }
