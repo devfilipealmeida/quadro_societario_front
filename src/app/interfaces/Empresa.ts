@@ -1,7 +1,7 @@
 import { Socio } from "./Socio";
 
-export interface Empresa {
-    responsible_company: string,
+export interface Company {
+	responsible_company: string,
 	cpf: string,
 	birth_date: Date,
 	fantasy_name: string,
@@ -11,5 +11,9 @@ export interface Empresa {
 	complement: string,
 	city: string,
 	state: string,
-	partners: Socio[]
+	partners?: Socio[]
+}
+
+export interface Empresa {
+	data: Company[]
 }
