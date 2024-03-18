@@ -1,0 +1,64 @@
+<div class="flex justify-center items-center mt-6">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h2 class="text-2xl font-bold mb-4">Cadastro de Empresa</h2>
+      <form>
+        <div class="flex flex-row">
+            <div class="mb-4 mr-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="responsible_company">Responsável pela empresa</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="responsible_company" type="text" placeholder="Responsável pela empresa">
+            </div>
+                <div class="mb-4 ml-2 mr-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">CPF</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cpf" type="text" placeholder="CPF">
+            </div>
+            <div class="mb-4 ml-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="birth_date">Data de Nascimento</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="text" placeholder="Data de Nascimento">
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div class="flex-1 mb-4 mr-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="fantasy_name">Nome Fantasia</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fantasy_name" type="text" placeholder="Nome Fantasia">
+            </div>
+            <div class="mb-4 ml-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="cnpj">CNPJ</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cnpj" type="text" placeholder="CNPJ">
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div class="mb-4 mr-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="address">Endereço</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" placeholder="Endereço">
+            </div>
+            <div class="mb-4 ml-2 mr-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="neighborhood">Bairro</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="neighborhood" type="text" placeholder="Bairro">
+            </div>
+            <div class="mb-4 ml-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="complement">Complemento</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="complement" type="text" placeholder="Complemento">
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div class="mb-4 mr-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="city">Cidade</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" placeholder="Cidade">
+            </div>
+            <div class="mb-4 ml-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="state">Estado</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="state" type="text" placeholder="Estado">
+            </div>
+        </div>
+        <div class="flex items-center">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" type="button">
+            Cadastrar
+          </button>
+          <button (click)="backToHome()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline" type="button">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
