@@ -30,8 +30,8 @@ export class DetalhesEmpresaComponentComponent {
     this.getEmpresa();
   }
 
-  goToFormSocio() {
-    this.router.navigate(['cadastro/socio']);
+  goToFormSocio(empresaId: number) {
+    this.router.navigate(['cadastro/socio', { id: empresaId }]);
   }
 
   goToHome() {
