@@ -1,0 +1,85 @@
+<div class="flex justify-center items-center mt-6">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mr-2">
+      <h2 class="text-2xl font-bold mb-4">Detalhes da Empresa</h2>
+      <div class="flex flex-row">
+          <div class="mb-4 mr-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="responsible_company">Responsável pela Empresa</label>
+            <p class="text-gray-900">Filipe Almeida</p>
+          </div>
+          <div class="mb-4 mx-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">CPF</label>
+            <p class="text-gray-900">02836271230</p>
+          </div>
+          <div class="mb-4 ml-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="birth_date">Data de Nascimento</label>
+            <p class="text-gray-900">07/06/1998</p>
+          </div>
+      </div>
+      <hr />
+      <div class="flex flex-row">
+          <div class="mb-4 mr-2 flex-1">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="fantasy_name">Nome Fantasia</label>
+            <p class="text-gray-900">Fatech Tecnologia</p>
+          </div>
+          <div class="mb-4 ml-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="cnpj">CNPJ</label>
+            <p class="text-gray-900">33.942.192/0001-04</p>
+          </div>
+      </div>
+    <hr />
+      <div class="flex flex-row">
+          <div class="mb-4 mr-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">Endereço</label>
+            <p class="text-gray-900">Rua Algarve</p>
+          </div>
+          <div class="mb-4 mx-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="neighborhood">Bairro</label>
+            <p class="text-gray-900">Mauazinho</p>
+          </div>
+          <div class="mb-4 ml-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="complement">Complemento</label>
+            <p class="text-gray-900">Atrás do Posto ATEM</p>
+          </div>
+      </div>
+      <hr />
+      <div class="flex flex-row">
+          <div class="mb-4 mr-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="city">Cidade</label>
+            <p class="text-gray-900">Manaus</p>
+          </div>
+          <div class="mb-4 ml-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="state">Estado</label>
+            <p class="text-gray-900">Amazonas</p>
+          </div>
+      </div>
+    </div>
+    <div>
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-2">
+            <div class="flex flex-row items-center content-center justify-between">
+              <h2 class="text-2xl font-bold mb-4">Quadro Societário</h2>
+              <button (click)="goToFormSocio()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-1 rounded focus:outline-none focus:shadow-outline" type="button">
+                + Novo Sócio
+              </button>
+            </div>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome</th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">CPF</th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Qualificação</th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data de Entrada</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">Filipe Almeida</td>
+                  <td class="px-6 py-4 whitespace-nowrap">02836271230</td>
+                  <td class="px-6 py-4 whitespace-nowrap">Presidente</td>
+                  <td class="px-6 py-4 whitespace-nowrap">11/03/2021</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>
+  
