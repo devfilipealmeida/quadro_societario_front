@@ -19,4 +19,13 @@ export class SocioService {
   deleteByCpf(cpf: string): Observable<string> {
     return this.http.delete<string>(`${this.apiUrl}/partners/remove/cpf/${cpf}`);
   }
+
+  getByCpf(cpf: string): Observable<Socio> {
+    return this.http.get<Socio>(`${this.apiUrl}/partners/cpf/${cpf}`);
+  }
+
+  updateSocio(data: Socio): Observable<Socio> {
+    const cpfToUrl = String(data.cpf);
+    return this.http.put<Socio>(`${this.apiUrl}/partners/${cpfToUrl}`, data);
+  }
 }

@@ -5,6 +5,6 @@ export interface Socio {
 	cpf: string,
 	qualification: string,
 	entry: Date | string,
-	corporation_id: number,
+	corporation_id?: number,
 	corporations?: Empresa[]
 }

@@ -34,4 +34,19 @@ export class TableComponentComponent implements OnInit{
       this.empresas = empresa.data
     });
   }
+
+  filterEmpresas(event: Event): void {
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase().trim();
+    
+    if (!searchTerm) {
+      this.empresas = this.empresas;
+      return;
+    }
+  
+    this.empresas = this.empresas.filter(empresa =>
+      empresa.responsible_company.toLowerCase().includes(searchTerm) ||
+      empresa.fantasy_name.toLowerCase().includes(searchTerm) ||
+      this.formataCnpj(empresa.cnpj).toLowerCase().includes(searchTerm)
+    );
+  }
 }
