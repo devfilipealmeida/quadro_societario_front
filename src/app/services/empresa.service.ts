@@ -20,7 +20,6 @@ export class EmpresaService {
   }
 
   createEmpresa(data: Company): Observable<Company> {
-    console.log('service', data)
     return this.http.post<Company>(`${this.apiUrl}/corporations`, data);
   }
 }

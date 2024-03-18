@@ -80,7 +80,7 @@
                   <td class="px-2 py-2 whitespace-nowrap text-sm">{{ formatarCPF(partner.cpf) }}</td>
                   <td class="px-2 py-2 whitespace-nowrap text-sm">{{ partner.qualification }}</td>
                   <td class="px-2 py-2 whitespace-nowrap text-sm">{{ partner.entry }}</td>
-                  <td class="px-2 py-2 whitespace-nowrap text-sm">Remover</td>
+                  <td class="px-2 py-2 whitespace-nowrap text-sm"><button (click)="removeSocio(partner.cpf)">Remover</button></td>
                 </tr>
               </tbody>
             </table>

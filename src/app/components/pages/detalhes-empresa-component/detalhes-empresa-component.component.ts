@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { EmpresaService } from '../../../services/empresa.service';
 import { Company } from '../../../interfaces/Empresa';
 import { CommonModule } from '@angular/common';
+import { SocioService } from '../../../services/socio.service';
+import { MessagesService } from '../../../services/messages.service';
 
 @Component({
   selector: 'app-detalhes-empresa-component',
@@ -26,7 +28,13 @@ export class DetalhesEmpresaComponentComponent {
     state: "",
   };
 
-  constructor(private router: Router, private empresaService: EmpresaService, private routeId: ActivatedRoute) {
+  constructor(
+    private router: Router, 
+    private empresaService: EmpresaService, 
+    private routeId: ActivatedRoute, 
+    private socioService: SocioService,
+    private messagesService: MessagesService
+    ) {
     this.getEmpresa();
   }
 
@@ -50,5 +58,13 @@ export class DetalhesEmpresaComponentComponent {
   getEmpresa() {
     const id = Number(this.routeId.snapshot.paramMap.get("id"));
     this.empresaService.getEmpresaById(id).subscribe((empresa) => (this.empresa = empresa));
+  }
+
+  removeSocio(cpf: string) {
+    this.socioService.deleteByCpf(cpf).subscribe();
+
+    this.messagesService.add('Sócio removido com sucesso.');
+
+    this.router.navigate(['home']);
   }
 }

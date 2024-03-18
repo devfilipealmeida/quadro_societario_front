@@ -15,4 +15,8 @@ export class SocioService {
     console.log('service', data)
     return this.http.post<Socio>(`${this.apiUrl}/partners`, data);
   }
+
+  deleteByCpf(cpf: string): Observable<string> {
+    return this.http.delete<string>(`${this.apiUrl}/partners/remove/cpf/${cpf}`);
+  }
 }
