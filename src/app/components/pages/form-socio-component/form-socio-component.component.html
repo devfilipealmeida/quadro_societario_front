@@ -1,0 +1,36 @@
+<div class="flex justify-center items-center mt-24">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h2 class="text-2xl font-bold mb-4">Cadastro de Sócio</h2>
+      <form>
+        <div class="flex flex-row">
+            <div class="mb-4 mr-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nome</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Nome">
+            </div>
+            <div class="mb-4 ml-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">CPF</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cpf" type="text" placeholder="CPF">
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div class="mb-4 mr-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="qualification">Qualificação</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="qualification" type="text" placeholder="Qualificação">
+            </div>
+            <div class="mb-4 ml-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="entry">Data de Entrada</label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="entry" type="text" placeholder="Data de Entrada">
+            </div>
+        </div>
+        <div class="flex items-center">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" type="button">
+            Cadastrar
+          </button>
+          <button (click)="backToHome()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline" type="button">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
