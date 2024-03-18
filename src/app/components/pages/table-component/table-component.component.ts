@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmpresaService } from '../../../services/empresa.service';
@@ -7,7 +7,7 @@ import { Company } from '../../../interfaces/Empresa';
 @Component({
   selector: 'app-table-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './table-component.component.html',
   styleUrl: './table-component.component.css'
 })

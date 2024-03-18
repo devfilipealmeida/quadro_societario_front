@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Empresa } from '../interfaces/Empresa';
+import { Company, Empresa } from '../interfaces/Empresa';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +13,9 @@ export class EmpresaService {
 
   getAll(): Observable<Empresa> {
     return this.http.get<Empresa>(`${this.apiUrl}/corporations`);
+  }
+
+  getEmpresaById(id: number): Observable<Company> {
+    return this.http.get<Company>(`${this.apiUrl}/corporations/${id}`);
   }
 }

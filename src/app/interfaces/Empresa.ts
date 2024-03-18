@@ -1,6 +1,7 @@
 import { Socio } from "./Socio";
 
 export interface Company {
+	id:number,
 	responsible_company: string,
 	cpf: string,
 	birth_date: Date,

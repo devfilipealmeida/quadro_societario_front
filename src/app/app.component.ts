@@ -17,7 +17,7 @@ import { DetalhesEmpresaComponentComponent } from './components/pages/detalhes-e
     FormEmpresaComponentComponent,
     FormSocioComponentComponent,
     DetalhesEmpresaComponentComponent,
-    RouterOutlet
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
