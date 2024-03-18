@@ -67,4 +67,8 @@ export class DetalhesEmpresaComponentComponent {
 
     this.router.navigate(['home']);
   }
+
+  editSocio(cpf: string) {
+    this.router.navigate([`editar/socio/${cpf}`]);
+  }
 }
