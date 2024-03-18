@@ -4,11 +4,13 @@ import { EmpresaService } from '../../../services/empresa.service';
 import { MessagesService } from '../../../services/messages.service';
 import { Company } from '../../../interfaces/Empresa';
 import { CommonModule } from '@angular/common';
+import { NgxMaskDirective } from 'ngx-mask';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-empresa-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgxMaskDirective, ReactiveFormsModule],
   templateUrl: './form-empresa-component.component.html',
   styleUrl: './form-empresa-component.component.css'
 })
@@ -68,7 +70,7 @@ export class FormEmpresaComponentComponent implements OnInit{
       cpf,
       birth_date,
       fantasy_name,
-      cnpj,
+      cnpj: cnpj.replace(/\D/g, ''),
       address,
       neighborhood,
       complement,

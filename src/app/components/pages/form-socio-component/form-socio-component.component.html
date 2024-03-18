@@ -12,7 +12,17 @@
             </div>
             <div class="mb-4 ml-2">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">CPF</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cpf" type="text" placeholder="CPF">
+              <input
+                inputmode="numeric"
+                mask="000.000.000-00" 
+                class="shadow appearance-none 
+                       border rounded w-full py-2 px-3 
+                       text-gray-700 leading-tight 
+                       focus:outline-none focus:shadow-outline" 
+                id="cpf" 
+                type="text" 
+                placeholder="CPF"
+              >
             </div>
         </div>
         <div class="flex flex-row">
@@ -22,7 +32,15 @@
             </div>
             <div class="mb-4 ml-2">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="entry">Data de Entrada</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="entry" type="text" placeholder="Data de Entrada">
+              <input
+                mask="d0/M0/0000" 
+                class="shadow appearance-none border 
+                      rounded w-full py-2 px-3 text-gray-700 
+                      leading-tight focus:outline-none focus:shadow-outline" 
+                id="entry" 
+                type="text" 
+                placeholder="Data de Entrada"
+              >
             </div>
         </div>
         <div class="flex items-center">

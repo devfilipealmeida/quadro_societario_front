@@ -4,11 +4,13 @@ import { SocioService } from '../../../services/socio.service';
 import { MessagesService } from '../../../services/messages.service';
 import { Socio } from '../../../interfaces/Socio';
 import { CommonModule } from '@angular/common';
+import { NgxMaskDirective } from 'ngx-mask';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-socio-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgxMaskDirective, ReactiveFormsModule],
   templateUrl: './form-socio-component.component.html',
   styleUrl: './form-socio-component.component.css'
 })
@@ -56,7 +58,7 @@ export class FormSocioComponentComponent  implements OnInit{
 
     const data = {
       name,
-      cpf,
+      cpf: cpf.replace(/\D/g, ''),
       qualification,
       entry,
       corporation_id
