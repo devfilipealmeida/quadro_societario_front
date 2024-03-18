@@ -11,6 +11,7 @@ Para rodar esse projeto, você precisa seguir os passos abaixo:
 1. Clonar este repositório
 2. Fazer download das dependências com o comando 'npm install'
 3. Ter rodando o sistema com a API Rest e o docker
+4. rodar o comando ng serve para rodar o frontend
    
 Das Views contidas no Projeto:
 - Home -> Tabela com Empresas Cadastradas
