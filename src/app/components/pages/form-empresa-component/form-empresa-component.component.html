@@ -1,7 +1,7 @@
 <div class="flex justify-center items-center mt-6">
     <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <h2 class="text-2xl font-bold mb-4">Cadastro de Empresa</h2>
-      <form>
+      <form (submit)="submitForm($event)">
         <div class="flex flex-row">
             <div class="mb-4 mr-2">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="responsible_company">Responsável pela empresa</label>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="flex items-center">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" type="button">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" type="submit">
             Cadastrar
           </button>
           <button (click)="backToHome()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline" type="button">

@@ -18,4 +18,9 @@ export class EmpresaService {
   getEmpresaById(id: number): Observable<Company> {
     return this.http.get<Company>(`${this.apiUrl}/corporations/${id}`);
   }
+
+  createEmpresa(data: Company): Observable<Company> {
+    console.log('service', data)
+    return this.http.post<Company>(`${this.apiUrl}/corporations`, data);
+  }
 }

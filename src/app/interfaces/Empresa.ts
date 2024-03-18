@@ -1,10 +1,10 @@
 import { Socio } from "./Socio";
 
 export interface Company {
-	id:number,
+	id?:number,
 	responsible_company: string,
 	cpf: string,
-	birth_date: Date,
+	birth_date: Date | string,
 	fantasy_name: string,
 	cnpj: string,
 	address: string,
