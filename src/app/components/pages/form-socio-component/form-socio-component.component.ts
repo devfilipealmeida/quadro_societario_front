@@ -5,7 +5,8 @@ import { MessagesService } from '../../../services/messages.service';
 import { Socio } from '../../../interfaces/Socio';
 import { CommonModule } from '@angular/common';
 import { NgxMaskDirective } from 'ngx-mask';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { adjustDateFormat, dateToString } from '../../../utils/js_functions';
 
 @Component({
   selector: 'app-form-socio-component',
@@ -15,31 +16,36 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './form-socio-component.component.css'
 })
 export class FormSocioComponentComponent  implements OnInit{
+  formPartner!: FormGroup;
   isEditMode = false;
   socioCpf: string | null = null;
   empresaId: number = 0;
-  socio: Socio = {
-    name: '',
-    cpf: '',
-    qualification: '',
-    entry: '',
-  };
 
   constructor(
     private router: Router, 
     private route: ActivatedRoute, 
     private socioService: SocioService, 
-    private messagesService: MessagesService
+    private messagesService: MessagesService,
+    private formBuilder: FormBuilder
     ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: any) => {
       if (params.has('id')) {
         this.empresaId = +params.get('id');
-      } else if (params.has('cpf')) {
+      } else if (params.has('idToAdd') & params.has('cpf')) {
         this.isEditMode = true;
         this.getByCpf(params.get('cpf'));
+        this.empresaId = +params.get('idToAdd');
       }
+    });
+
+    this.formPartner = this.formBuilder.group({
+      name: ['', Validators.required],
+      cpf: ['', Validators.required],
+      qualification: ['', Validators.required],
+      entry: [this.isEditMode ? '' : '', this.isEditMode ? null : Validators.required],
+      corporation_id: [''],
     });
   }
 
@@ -50,58 +56,41 @@ export class FormSocioComponentComponent  implements OnInit{
   submitForm(event: Event): void {
     event.preventDefault();
 
-    const name = (document.getElementById('name') as HTMLInputElement).value;
-    const cpf = (document.getElementById('cpf') as HTMLInputElement).value;
-    const qualification = (document.getElementById('qualification') as HTMLInputElement).value;
-    const entry = (document.getElementById('entry') as HTMLInputElement).value;
-    const corporation_id = this.empresaId;
+    if (this.formPartner.valid) {
+      this.messagesService.add('Formulário válido. Enviando dados...')
+    } else {
+      return this.messagesService.add('Por favor, preencha todos os campos corretamente.');
+    }
 
-    const data = {
-      name,
-      cpf: cpf.replace(/\D/g, ''),
-      qualification,
-      entry,
-      corporation_id
-    };
+    const formPartnerValues = this.formPartner.value;
+
+    formPartnerValues.cpf = formPartnerValues.cpf.replace(/\D/g, '');
+    {!this.isEditMode ? formPartnerValues.entry = adjustDateFormat(formPartnerValues.entry) : null}
+    formPartnerValues.corporation_id = this.empresaId;
 
     if(this.isEditMode) {
-      this.socioService.updateSocio(data).subscribe();
-
+      this.socioService.updateSocio(formPartnerValues).subscribe();
       this.messagesService.add('Sócio atualizado com sucesso.');
-  
       this.router.navigate(['home']);
     } else {
-      this.socioService.createSocio(data).subscribe();
-  
+      this.socioService.createSocio(formPartnerValues).subscribe();
       this.messagesService.add('Sócio adicionado com sucesso.');
-  
       this.router.navigate(['home']);
     }
   }
 
   getByCpf(cpf: string) {
     this.socioService.getByCpf(cpf).subscribe((socio) => {
-      this.socio = socio;
-      this.populateFormFields();
+      this.populateFormFields(socio);
     });
   }
 
-  populateFormFields() {
-    const nameInput = document.getElementById('name') as HTMLInputElement;
-    const cpfInput = document.getElementById('cpf') as HTMLInputElement;
-    const qualificationInput = document.getElementById('qualification') as HTMLInputElement;
-    const entryInput = document.getElementById('entry') as HTMLInputElement;
-  
-    nameInput.value = this.socio.name;
-    cpfInput.value = this.socio.cpf;
-    qualificationInput.value = this.socio.qualification;
-
-    const stringDate = new Date(this.socio.entry);
-    const dia = stringDate.getDate().toString().padStart(2, '0');
-    const mes = (stringDate.getMonth() + 1).toString().padStart(2, '0');
-    const ano = stringDate.getFullYear().toString();
-    const dataFormatada = `${dia}/${mes}/${ano}`;
-
-    entryInput.value = dataFormatada;
+  populateFormFields(socio: Socio) {
+    this.formPartner.patchValue({
+      name: socio.name,
+      cpf: socio.cpf,
+      qualification: socio.qualification,
+      entry: dateToString(socio.entry),
+    });
   }
 }

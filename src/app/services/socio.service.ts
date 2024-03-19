@@ -14,7 +14,6 @@ export class SocioService {
   constructor(private http: HttpClient) { }
 
   createSocio(data: Socio): Observable<Socio> {
-    console.log('service', data)
     return this.http.post<Socio>(this.apiUrl, data);
   }
 

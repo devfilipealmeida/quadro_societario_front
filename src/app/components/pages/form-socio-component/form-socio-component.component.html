@@ -4,15 +4,27 @@
         <ng-container *ngIf="isEditMode; else cadastro">Atualizar Dados de Sócio</ng-container>
         <ng-template #cadastro>Cadastro de Sócio</ng-template>
       </h2>
-      <form (submit)="submitForm($event)">
+      <form [formGroup]="formPartner" (submit)="submitForm($event)">
         <div class="flex flex-row">
             <div class="mb-4 mr-2">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nome</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Nome">
+              <input 
+                required
+                formControlName="name"
+                class="shadow appearance-none border 
+                       rounded w-full py-2 px-3 
+                       text-gray-700 leading-tight 
+                       focus:outline-none focus:shadow-outline" 
+                id="name" 
+                type="text" 
+                placeholder="Nome"
+              >
             </div>
             <div class="mb-4 ml-2">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">CPF</label>
               <input
+                required
+                formControlName="cpf"
                 inputmode="numeric"
                 mask="000.000.000-00" 
                 class="shadow appearance-none 
@@ -28,11 +40,23 @@
         <div class="flex flex-row">
             <div class="mb-4 mr-2">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="qualification">Qualificação</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="qualification" type="text" placeholder="Qualificação">
+              <input 
+                required
+                formControlName="qualification"
+                class="shadow appearance-none border 
+                       rounded w-full py-2 px-3 text-gray-700 
+                       leading-tight focus:outline-none 
+                       focus:shadow-outline" 
+                id="qualification" 
+                type="text" 
+                placeholder="Qualificação"
+              >
             </div>
             <div class="mb-4 ml-2">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="entry">Data de Entrada</label>
               <input
+                [readonly]="isEditMode"
+                formControlName="entry"
                 mask="d0/M0/0000" 
                 class="shadow appearance-none border 
                       rounded w-full py-2 px-3 text-gray-700 
