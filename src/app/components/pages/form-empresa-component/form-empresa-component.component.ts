@@ -45,7 +45,7 @@ export class FormEmpresaComponentComponent implements OnInit{
       cnpj: ['', Validators.required],
       address: ['', Validators.required],
       neighborhood: ['', Validators.required],
-      complement: ['', Validators.required],
+      complement: [' ', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required]
     });
@@ -57,6 +57,12 @@ export class FormEmpresaComponentComponent implements OnInit{
 
   submitForm(event: Event): void {
     event.preventDefault();
+
+    if (this.form.valid) {
+      this.messagesService.add('Formulário válido. Enviando dados...')
+    } else {
+      return this.messagesService.add('Por favor, preencha todos os campos corretamente.');
+    }
 
     const formValues = this.form.value;
 
