@@ -1,4 +1,4 @@
-import { Empresa } from "./Empresa";
+import { Data } from "./Empresa";
 
 export interface Socio {
     name: string,
@@ -6,5 +6,5 @@ export interface Socio {
 	qualification: string,
 	entry: Date | string,
 	corporation_id?: number,
-	corporations?: Empresa[]
+	corporations?: Data[]
 }

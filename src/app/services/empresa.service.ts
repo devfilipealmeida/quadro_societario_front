@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Company, Empresa } from '../interfaces/Empresa';
+import { Company, Data } from '../interfaces/Empresa';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -13,8 +13,8 @@ export class EmpresaService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Empresa> {
-    return this.http.get<Empresa>(this.apiUrl);
+  getAll(): Observable<Data> {
+    return this.http.get<Data>(this.apiUrl);
   }
 
   getEmpresaById(id: number): Observable<Company> {
