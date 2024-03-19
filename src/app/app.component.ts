@@ -9,6 +9,7 @@ import { DetalhesEmpresaComponentComponent } from './components/pages/detalhes-e
 import { MessagesComponent } from './components/messages/messages.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterOutlet,
     MessagesComponent,
     NgxMaskDirective,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
