@@ -32,4 +32,8 @@ export class EmpresaService {
   updateEmpresa(data: Company, empresaId: number): Observable<Company> {
     return this.http.put<Company>(`${this.apiUrl}/${empresaId}`, data);
   }
+
+  delete(id: number): Observable<Company> {
+    return this.http.delete<Company>(`${this.apiUrl}/${id}`);
+  }
 }

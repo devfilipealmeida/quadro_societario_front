@@ -69,4 +69,10 @@ export class DetalhesEmpresaComponentComponent {
   editSocio(cpf: string, empresaId: number) {
     this.router.navigate([`editar/socio/${cpf}`, { idToAdd: empresaId }]);
   }
+
+  deleteEmpresa(id: number) {
+    this.empresaService.delete(id).subscribe();
+    this.messagesService.add('Empresa removida com sucesso.');
+    this.router.navigate(['home']);
+  }
 }
