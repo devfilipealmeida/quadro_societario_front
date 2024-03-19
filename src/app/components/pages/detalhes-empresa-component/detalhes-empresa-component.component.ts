@@ -62,13 +62,17 @@ export class DetalhesEmpresaComponentComponent {
 
   removeSocio(cpf: string) {
     this.socioService.deleteByCpf(cpf).subscribe();
-
     this.messagesService.add('Sócio removido com sucesso.');
-
     this.router.navigate(['home']);
   }
 
-  editSocio(cpf: string) {
-    this.router.navigate([`editar/socio/${cpf}`]);
+  editSocio(cpf: string, empresaId: number) {
+    this.router.navigate([`editar/socio/${cpf}`, { idToAdd: empresaId }]);
+  }
+
+  deleteEmpresa(id: number) {
+    this.empresaService.delete(id).subscribe();
+    this.messagesService.add('Empresa removida com sucesso.');
+    this.router.navigate(['home']);
   }
 }

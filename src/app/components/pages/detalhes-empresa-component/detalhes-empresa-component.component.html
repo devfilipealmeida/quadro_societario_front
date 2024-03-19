@@ -52,9 +52,14 @@
             <p class="text-gray-900">{{ empresa.state }}</p>
           </div>
       </div>
-      <button (click)="goToHome()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-1 rounded focus:outline-none focus:shadow-outline" type="button">
-        Voltar
-      </button>
+      <div class="flex flex-row">
+        <button (click)="goToHome()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-1 mr-2 rounded focus:outline-none focus:shadow-outline" type="button">
+          Voltar
+        </button>
+        <button (click)="deleteEmpresa(empresa.id!)" class="bg-red-500 hover:bg-red-700 text-white font-bold px-2 py-1 ml-2 rounded focus:outline-none focus:shadow-outline" type="button">
+          Excluir Empresa
+        </button>
+      </div>
     </div>
     <div>
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-2">
@@ -80,7 +85,7 @@
                   <td class="px-2 py-2 whitespace-nowrap text-sm">{{ formatarCPF(partner.cpf) }}</td>
                   <td class="px-2 py-2 whitespace-nowrap text-sm">{{ partner.qualification }}</td>
                   <td class="px-2 py-2 whitespace-nowrap text-sm">{{ partner.entry }}</td>
-                  <td class="px-2 py-2 whitespace-nowrap text-sm"><button (click)="removeSocio(partner.cpf)" class="mr-2">Remover</button>|<button (click)="editSocio(partner.cpf)" class="ml-2">Editar</button></td>
+                  <td class="px-2 py-2 whitespace-nowrap text-sm"><button (click)="removeSocio(partner.cpf)" class="mr-2">Remover</button>|<button (click)="editSocio(partner.cpf, empresa.id!)" class="ml-2">Editar</button></td>
                 </tr>
               </tbody>
             </table>

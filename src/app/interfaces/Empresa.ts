@@ -15,6 +15,6 @@ export interface Company {
 	partners?: Socio[]
 }
 
-export interface Empresa {
+export interface Data {
 	data: Company[]
 }
