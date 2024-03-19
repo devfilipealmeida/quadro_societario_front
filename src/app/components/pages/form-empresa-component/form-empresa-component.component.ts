@@ -45,7 +45,7 @@ export class FormEmpresaComponentComponent implements OnInit{
       cnpj: ['', Validators.required],
       address: ['', Validators.required],
       neighborhood: ['', Validators.required],
-      complement: [' ', Validators.required],
+      complement: [''],
       city: ['', Validators.required],
       state: ['', Validators.required]
     });
